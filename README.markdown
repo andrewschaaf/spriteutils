@@ -47,7 +47,6 @@ and these web framework helpers:
 // output.json
 {
     "sprite_images_map": {
-        "background": "#......" or [r, g, b, alpha]. // 0-255
         "initial": [
             "file:///.../signup.png",
             "file:///.../signup_hover.png",
@@ -64,6 +63,7 @@ and these web framework helpers:
 <pre>cat input.json | sprite-create > sprite.json
 // input.json
 {
+    "background": "#......" or [r, g, b, alpha] // 0-255
     "images": [
         "file:///.../landing/signup.png",
         "file:///.../landing/signup_hover.png",
