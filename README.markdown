@@ -188,7 +188,7 @@ Notes:
 
 * It reads (width, height) from the image file (unless cached)
 * <code>from django.core.cache import cache</code> can be used, the spriteutils caches the value <code>{"w":...,"h":...,}</code> with key <code>'spriteutils:url\_utf8\_64:mtime'</code>
-* It doesn't support non-local remote files, so you'll have to do those manuallys
+* It doesn't support non-local remote files, so you'll have to do those manually
 
 
 
