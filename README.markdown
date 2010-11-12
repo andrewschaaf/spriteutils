@@ -28,7 +28,7 @@ and these web framework helpers:
 ### Installing
 
 * Prereqs: [ImageMagick](http://www.imagemagick.org/script/index.php),
-    [OptiPNG](http://optipng.sourceforge.net/) (optional)
+    [OptiPNG](http://optipng.sourceforge.net/) (optional), Python (2.6) or (2.5 with simplejson)
 * Put this repo somewhere on your filesystem
 * Optional: add <code>spriteutils/scripts</code> to your <code>PATH</code>
 
