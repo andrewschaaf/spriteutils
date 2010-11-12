@@ -12,10 +12,10 @@ Goal: provide useful spriting tools for
 
 So far, this repo consists of four command-line tools:
 
-* sprite-images-from-css
-* sprite-create
-* sprite-html-viz
-* sprite-replace-css
+* <code>sprite-images-from-css</code>
+* <code>sprite-create</code>
+* <code>sprite-html-viz</code>
+* <code>sprite-replace-css</code>
 
 and these language bindings:
 
@@ -188,7 +188,7 @@ Notes:
 
 * It reads (width, height) from the image file (unless cached)
 * <code>from django.core.cache import cache</code> can be used, the spriteutils caches the value <code>{"w":...,"h":...,}</code> with key <code>'spriteutils:url\_utf8\_64:mtime'</code>
-* It doesn't support non-local remote files, so you'll have to do those manually
+* It doesn't support non-local remote files (like register.png), so you have to write that CSS manually
 
 
 
