@@ -27,7 +27,8 @@ and these web framework helpers:
 
 ### Installing
 
-* Prereq: [ImageMagick](http://www.imagemagick.org/script/index.php)
+* Prereqs: [ImageMagick](http://www.imagemagick.org/script/index.php),
+    [OptiPNG](http://optipng.sourceforge.net/) (optional)
 * Put this repo somewhere on your filesystem
 * Optional: add <code>spriteutils/scripts</code> to your <code>PATH</code>
 
