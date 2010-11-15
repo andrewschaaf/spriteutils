@@ -1,0 +1,8 @@
+
+.register {
+    /* SPRITE registration */
+    background: url("http://artserver:9001/register.png");
+    width: 130px;
+    height: 36px;
+}
+

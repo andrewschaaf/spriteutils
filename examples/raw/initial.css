@@ -1,0 +1,15 @@
+
+.signup {
+    /* SPRITE initial */
+    background: url("/images/landing/signup.png");
+    width: 182px;
+    height: 36px;
+}
+.signup:hover {
+    /* SPRITE initial */
+    background: url("/images/landing/signup_hover.png");
+}
+.signup:active {
+    /* SPRITE initial */
+    background: url("/images/landing/signup_active.png");
+}
