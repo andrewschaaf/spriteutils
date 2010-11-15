@@ -1,6 +1,11 @@
 ## Status
 
-Just this README committed so far -- I've got a partial implementation which I'll work on and post this weekend.
+Not implemented yet:
+
+* sprite-html-viz
+* Django tags
+* Django example
+
 
 ## Overview
 
@@ -26,14 +31,18 @@ and these web framework helpers:
 
 ### Installing
 
-* Prereqs: [ImageMagick](http://www.imagemagick.org/script/index.php),
-    [OptiPNG](http://optipng.sourceforge.net/) (optional), Python (2.6) or (2.5 with simplejson)
 * Put this repo somewhere on your filesystem
 * Optional: add <code>spriteutils/scripts</code> to your <code>PATH</code>
+* Prereqs:
+[Python Imaging Library](http://www.pythonware.com/products/pil/),
+[OptiPNG](http://optipng.sourceforge.net/) (optional),
+Python (2.6) or (2.5 with [simplejson](http://pypi.python.org/pypi/simplejson))
+
+    * If you have trouble with PIL, consider doing your work on an Ubuntu VM, SSHFS-mounted via MacFusion ([10.6.3 fix](http://rackerhacker.com/2009/08/28/fix-macfusion-on-snow-leopard/)) or equivalent. It's awesome &mdash; in the long run, you'll avoid many compilation nightmares.
 
 ### Future Work
 
-* A very smart layout engine. (The current one is a trivial stub. It just concatenates vertically)
+* Find or create a very smart layout engine. (The current one is a trivial stub. It just concatenates vertically)
 
 ## sprite-images-from-css
 
@@ -52,7 +61,7 @@ and these web framework helpers:
             "file:///.../signup_active.png",
         ],
         "registration": [
-            "http://.../register.png",
+            "http://.../register.gif",
         ],
     }
 }</pre>
@@ -62,6 +71,10 @@ and these web framework helpers:
 <pre>cat input.json | sprite-create > sprite.json
 // input.json
 {
+    // Optional optipng level (0-7. 2 is optipng's default and 7 is "very slow").
+    // If omitted, optipng will not be used.
+    "optipng": 2,
+    
     "background": "#......" or [r, g, b, alpha] // 0-255
     "images": [
         "file:///.../landing/signup.png",
@@ -73,7 +86,6 @@ and these web framework helpers:
 // sprite.json
 {
     "png_64": "...",
-    "url": "http://..../.../sprite.png",
     "layout": {
         "file:///...signup.png": [0, 0, 120, 36],
         "file:///...signup_hover.png": [0, 36, 120, 36],
@@ -107,11 +119,12 @@ Note that if your app serves /images/... when in development mode, your CSS will
 
 <pre>// input.json
 {
+    "root": "~/.../myapp/images",
     "sprite_urls": {
         "initial": ".../c1a2245b6b39.png",
         "registration": ".../ea274ffd321f.png",
-    }
-    "layout": {...see sprite-create...}
+    },
+    "layout": {...see sprite-create...},
     "css": "...
             .signup {
                 /* SPRITE initial */
@@ -129,7 +142,7 @@ Note that if your app serves /images/... when in development mode, your CSS will
             }
             .register {
                 /* SPRITE registration */
-                background: url("http://artserver:9001/register.png");
+                background: url("http://artserver:9001/register.gif");
                 width: 130px;
                 height: 36px;
             }
@@ -175,7 +188,7 @@ Note that if your app serves /images/... when in development mode, your CSS will
     }
     .register {
         /* SPRITE registration */
-        background: url("http://artserver:9001/register.png");
+        background: url("http://artserver:9001/register.gif");
         width: 130px;
         height: 36px;
     }
@@ -189,7 +202,7 @@ Notes:
 
 * It reads (width, height) from the image file (unless cached)
 * <code>from django.core.cache import cache</code> can be used, the spriteutils caches the value <code>{"w":...,"h":...,}</code> with key <code>'spriteutils:url\_utf8\_64:mtime'</code>
-* It doesn't support non-local remote files (like register.png), so you have to write that CSS manually
+* It doesn't support non-local remote files (like register.gif), so you have to write that CSS manually
 
 
 
