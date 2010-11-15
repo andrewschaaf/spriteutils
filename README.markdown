@@ -1,4 +1,3 @@
-
 ## Status
 
 Just this README committed so far -- I've got a partial implementation which I'll work on and post this weekend.
@@ -68,17 +67,18 @@ and these web framework helpers:
         "file:///.../landing/signup.png",
         "file:///.../landing/signup_hover.png",
         "file:///.../landing/signup_active.png",
-        "http://.../register.png",
+        "http://.../register.gif",
     ],
 }
 // sprite.json
 {
     "png_64": "...",
+    "url": "http://..../.../sprite.png",
     "layout": {
         "file:///...signup.png": [0, 0, 120, 36],
         "file:///...signup_hover.png": [0, 36, 120, 36],
         "file:///...signup_active.png": [0, 72, 120, 36],
-        "http://...register.png": [0, 108, 130, 36],
+        "http://...register.gif": [0, 108, 130, 36],
     }
 }</pre>
 
