@@ -1,0 +1,5 @@
+
+We license our commits under LICENSE.txt.
+
+
+Andrew Schaaf <andrew@andrewschaaf.com>
