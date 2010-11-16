@@ -3,3 +3,4 @@ We license our commits under LICENSE.txt.
 
 
 Andrew Schaaf <andrew@andrewschaaf.com>
+Sergey Chernyshev <sergey.chernyshev@gmail.com>
